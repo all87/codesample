@@ -271,11 +271,9 @@ function ($) {
 				
 			if (this.multiple()) { // for multiple just insertr again labels
 				this.inputValue(this.values(', '), true);
-			} else if (
-				this.DropComp.selectedItem && (this.selectedItem != this.DropComp.selectedItem || this.DropComp.cfg.requireSelection)
-			) {
+			} else if ( this.DropComp.selectedItem && (this.selectedItem != this.DropComp.selectedItem || this.DropComp.cfg.requireSelection) ) { // select-one item value
 				this.inputValue(this.DropComp.selectedItem.text(), true);
-			} else {
+			} else { // custom value
 				if (arguments.length==1 && !$.isArray(value) && (!this.DropComp.selectedItem || this.DropComp.selectedItem.text() != value))
 				{
 					this.DropComp.clearSelection();
